@@ -3,8 +3,8 @@
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
-class LdapLookupServiceProvider extends ServiceProvider
-{
+class LdapLookupServiceProvider extends ServiceProvider {
+
     /**
      * Boot the service provider.
      *
@@ -22,7 +22,7 @@ class LdapLookupServiceProvider extends ServiceProvider
      */
     protected function setupConfig()
     {
-        $source = realpath(__DIR__.'/../config/ldaplookup.php');
+        $source = realpath(__DIR__ . '/../config/ldaplookup.php');
 
         $this->publishes([$source => config_path('ldaplookup.php')]);
 
@@ -40,9 +40,11 @@ class LdapLookupServiceProvider extends ServiceProvider
         $this->registerConnection($this->app);
     }
 
-    protected function registerConnection(Application $app){
+    protected function registerConnection(Application $app)
+    {
 
-        $app->singleton('ldaplookup.connection', function ($app) {
+        $app->singleton('ldaplookup.connection', function ($app)
+        {
 
             $config = $app['config']['ldaplookup'];
 
@@ -55,7 +57,8 @@ class LdapLookupServiceProvider extends ServiceProvider
 
     protected function registerLdapLookup(Application $app)
     {
-        $app->singleton('ldaplookup', function ($app) {
+        $app->singleton('ldaplookup', function ($app)
+        {
 
             $connection = $app['ldaplookup.connection'];
 

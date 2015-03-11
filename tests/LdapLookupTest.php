@@ -10,19 +10,23 @@ class LdapLookupTest extends \Orchestra\Testbench\TestCase {
 
         $config = $this->mockLdapLookupConfig();
 
+        $this->config = $config;
+
         $app['config']->set('ldaplookup.hostname', $config['hostname']);
         $app['config']->set('ldaplookup.basedn', $config['basedn']);
 
     }
 
-    protected function mockLdapLookupConfig(){
+    protected function mockLdapLookupConfig()
+    {
 
         $configFile = dirname(__FILE__) . '/config.php';
 
-        if(!file_exists($configFile)){
+        if (!file_exists($configFile))
+        {
 
             $this->fail('Please take the config.php.dist and create a config.php file ' .
-            'with your LDAP server details within the same directory');
+                'with your LDAP server details within the same directory');
 
         }
 
@@ -40,7 +44,7 @@ class LdapLookupTest extends \Orchestra\Testbench\TestCase {
     protected function getPackageAliases($app)
     {
         return [
-            'LdapLookup'      => 'Maenbn\LdapLookup\Facades\LdapLookup',
+            'LdapLookup' => 'Maenbn\LdapLookup\Facades\LdapLookup',
         ];
     }
 
@@ -53,7 +57,8 @@ class LdapLookupTest extends \Orchestra\Testbench\TestCase {
 
     }
 
-    public function testConnection(){
+    public function testConnection()
+    {
 
         $ldapLookup = \LdapLookup::connect();
 
@@ -61,9 +66,10 @@ class LdapLookupTest extends \Orchestra\Testbench\TestCase {
 
     }
 
-    public function testGetByUid(){
+    public function testGetByUid()
+    {
 
-        $entry = \LdapLookup::getByUid('ben203');
+        $entry = \LdapLookup::getByUid($this->config['test_user']);
 
         $this->assertArrayHasKey('cn', $entry);
 

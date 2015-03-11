@@ -24,14 +24,8 @@ class Connection implements ConnectionInterface {
         $this->connection = ldap_connect($this->config['hostname']) or die("Couldn't connect to AD!");
 
         // Read only bind
-        try {
         $readConnection = ldap_bind($this->connection);
-        } catch( ErrorException $e ) {
-            dd($e);
-            // do stuff
-        }
 
-        //dd($readConnection);
 
         return $readConnection;
 

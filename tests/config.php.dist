@@ -2,8 +2,10 @@
 
 return [
 
-    'hostname' => 'null',
+    'hostname' => null,
 
-    'basedn' => 'null',
+    'basedn' => null,
+
+    'test_user' => null,
 
 ];
