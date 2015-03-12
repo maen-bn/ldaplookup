@@ -41,7 +41,6 @@ LdapLookup::getByUid('test123'); // will return an array
 ```
 You can also run your own custom search by doing the following:
 ```php
-//Find the user with the test123 username
 LdapLookup::runSearch('mail=test*','first'); // will first return first entry
 LdapLookup::runSearch('mail=test*'); // will all entries
 ```
