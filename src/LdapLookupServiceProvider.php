@@ -43,7 +43,15 @@ class LdapLookupServiceProvider extends ServiceProvider {
     protected function registerConnection(Application $app)
     {
 
-        $app->singleton('ldaplookup.connection', function ($app)
+       /* $app->singleton('ldaplookup.connection', function ($app)
+        {
+
+            $config = $app['config']['ldaplookup'];
+
+            return new Connection($config);
+        });*/
+
+        $app->bind('ConnectionInterface', function ($app)
         {
 
             $config = $app['config']['ldaplookup'];
@@ -60,7 +68,7 @@ class LdapLookupServiceProvider extends ServiceProvider {
         $app->singleton('ldaplookup', function ($app)
         {
 
-            $connection = $app['ldaplookup.connection'];
+            $connection = $app['ConnectionInterface'];
 
             return new LdapLookup($connection);
         });
@@ -77,7 +85,7 @@ class LdapLookupServiceProvider extends ServiceProvider {
     {
         return [
             'ldaplookup',
-            'ldaplookup.connection'
+            'Maenbn\LdapLookup\ConnectionInterface'
         ];
     }
 }

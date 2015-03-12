@@ -1,6 +1,6 @@
 <?php namespace Maenbn\LdapLookup;
 
-use Maenbn\LdapLookup\Connection as LdapConnection;
+use Maenbn\LdapLookup\ConnectionInterface as LdapConnection;
 
 class LdapLookup implements LookupInterface {
 
@@ -76,8 +76,18 @@ class LdapLookup implements LookupInterface {
 
         $filter = "uid=" . $uid;
 
+        $entries = $this->runSearch($filter, 'first');
+
+        return $entries;
+
+
+    }
+
+    public function runSearch($filter, $type = null)
+    {
+
         $resultsId = $this->search($filter);
-        $entries = $this->getEntries($resultsId, 'first');
+        $entries = $this->getEntries($resultsId, $type);
 
         return $entries;
 
