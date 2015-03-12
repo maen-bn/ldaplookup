@@ -31,3 +31,17 @@ A configuration for your LDAP server is required for the LdapLookup to work. Fir
 $ php artisan vendor:publish
 ```
 which will create a `config/ldaplookup.php` file in your app where you can modify it to reflect your LDAP server `hostname` and `basedn`.
+
+## Usage
+
+You can search for an indivdual user by carrying out the following:
+```php
+//Find the user with the test123 username
+LdapLookup::getByUid('test123'); // will return an array
+```
+You can also run your own custom search by doing the following:
+```php
+//Find the user with the test123 username
+LdapLookup::runSearch('mail=test*','first'); // will first return first entry
+LdapLookup::runSearch('mail=test*'); // will all entries
+```
