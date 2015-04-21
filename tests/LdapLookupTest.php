@@ -13,7 +13,10 @@ class LdapLookupTest extends \Orchestra\Testbench\TestCase {
         $this->config = $config;
 
         $app['config']->set('ldaplookup.hostname', $config['hostname']);
-        $app['config']->set('ldaplookup.basedn', $config['basedn']);
+        $app['config']->set('ldaplookup.port', $config['port']);
+        $app['config']->set('ldaplookup.baseDn', $config['baseDn']);
+        $app['config']->set('ldaplookup.bindRdn', $config['bindRdn']);
+        $app['config']->set('ldaplookup.bindPassword', $config['bindPassword']);
 
     }
 

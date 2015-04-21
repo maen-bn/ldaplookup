@@ -4,6 +4,12 @@ return [
 
     'hostname' => null,
 
-    'basedn' => null,
+    'port' => 389,
+
+    'baseDn' => null,
+
+    'bindRdn' => null,
+
+    'bindPassword' => null
 
 ];

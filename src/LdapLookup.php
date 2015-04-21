@@ -32,7 +32,7 @@ class LdapLookup implements LookupInterface {
     protected function search($filter)
     {
 
-        return ldap_search($this->connection->connection, $this->config['basedn'], $filter);
+        return ldap_search($this->connection->connection, $this->config['baseDn'], $filter);
 
     }
 

@@ -21,13 +21,13 @@ class Connection implements ConnectionInterface {
     public function connect()
     {
 
-        $this->connection = ldap_connect($this->config['hostname']) or die("Couldn't connect to AD!");
+        $this->connection = ldap_connect($this->config['hostname'], $this->config['port'])
+        or die("Couldn't connect to AD!");
 
-        // Read only bind
-        $readConnection = ldap_bind($this->connection);
+        $bind = ldap_bind($this->connection, $this->config['bindRdn'], $this->config['bindPassword']);
 
 
-        return $readConnection;
+        return $bind;
 
     }
 
