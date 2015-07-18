@@ -32,6 +32,15 @@ $ php artisan vendor:publish
 ```
 which will create a `config/ldaplookup.php` file in your app where you can modify it to reflect your LDAP server `hostname`, `port`, `baseDn`, `bindRdn`, and `bindPassword`.
 
+Add the following lines in your `.env` file:
+
+```ini
+LDAP_HOSTNAME=ldap.domain.com
+LDAP_BASE_DN=dc=domain,dc=com
+LDAP_BIND_RDN=cn=admin,dc=domain,dc=com
+LDAP_BIND_PASSWORD=admin
+```
+
 ## Usage
 
 You can search for an indivdual user by carrying out the following:
