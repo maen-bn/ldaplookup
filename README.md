@@ -8,7 +8,7 @@ The tool requires you have [PHP](https://php.net) 5.5.9+ and [Composer](https://
 
 The get the latest version of LDAP lookup, add the following line to your `composer.json` file:
 ```
-"maenbn/ldaplookup": "dev-master"
+"maenbn/ldaplookup": "1.1.*"
 ```
 
 Then run `composer install` or `composer update` to install.
