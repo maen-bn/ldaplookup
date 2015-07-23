@@ -10,7 +10,7 @@ return [
 
     'bindRdn' => env('LDAP_BIND_RDN'),
 
-    'bindPassword' => env('LDAP_BIND_PASSWORD')
+    'bindPassword' => env('LDAP_BIND_PASSWORD'),
 
     'version' => env('LDAP_VERSION')
 

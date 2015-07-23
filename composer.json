@@ -1,6 +1,6 @@
 {
     "name": "maenbn/ldaplookup",
-    "description": "LdapLookup is a tool to lookup entries in LDAP For Laravel 5",
+    "description": "LdapLookup is a tool to lookup entries in LDAP For Laravel 5.1 LTS",
     "keywords": ["laravel", "framework", "ldap lookup", "ldap", "lookup", "LdapLookup", "Laravel LdapLookup", "Laravel-LdapLookup", "Ben Norcombe", "BenNorcombe"],
     "license": "MIT",
     "authors": [
@@ -16,7 +16,7 @@
 
     },
     "require-dev": {
-        "orchestra/testbench": "3.0.*"
+        "orchestra/testbench": "3.1.*"
     },
     "autoload": {
         "psr-4": {
