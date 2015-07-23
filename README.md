@@ -1,10 +1,10 @@
 # LDAP Lookup
 =================
-LDAP lookup is a simple LDAP entries lookup provider for use with in Laravel 5
+LDAP lookup is a simple LDAP entries lookup provider for use with in Laravel 5.1 LTS
 
 ## Installation
 
-The tool requires you have [PHP](https://php.net) 5.4.*+ and [Composer](https://getcomposer.org).
+The tool requires you have [PHP](https://php.net) 5.5.9+ and [Composer](https://getcomposer.org).
 
 The get the latest version of LDAP lookup, add the following line to your `composer.json` file:
 ```
