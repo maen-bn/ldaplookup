@@ -2,16 +2,16 @@
 
 return [
 
-    'hostname' => null,
+    'hostname' => env('LDAP_HOSTNAME'),
 
-    'port' => 389,
+    'port' => env('LDAP_PORT', 389),
 
-    'baseDn' => null,
+    'baseDn' => env('LDAP_BASE_DN'),
 
-    'bindRdn' => null,
+    'bindRdn' => env('LDAP_BIND_RDN'),
 
-    'bindPassword' => null,
+    'bindPassword' => env('LDAP_BIND_PASSWORD')
 
-    'version' => null
+    'version' => env('LDAP_VERSION')
 
 ];
