@@ -10,6 +10,8 @@ return [
 
     'bindRdn' => null,
 
-    'bindPassword' => null
+    'bindPassword' => null,
+
+    'version' => null
 
 ];
