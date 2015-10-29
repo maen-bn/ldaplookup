@@ -1,10 +1,12 @@
-<?php namespace Maenbn\LdapLookup;
+<?php
+
+namespace Maenbn\LdapLookup;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
-class LdapLookupServiceProvider extends ServiceProvider {
-
+class LdapLookupServiceProvider extends ServiceProvider
+{
     /**
      * Boot the service provider.
      *
@@ -51,8 +53,7 @@ class LdapLookupServiceProvider extends ServiceProvider {
             return new Connection($config);
         });*/
 
-        $app->bind('ConnectionInterface', function ($app)
-        {
+        $app->bind('ConnectionInterface', function ($app) {
 
             $config = $app['config']['ldaplookup'];
 
@@ -60,13 +61,11 @@ class LdapLookupServiceProvider extends ServiceProvider {
         });
 
         $app->alias('ldaplookup.connection', 'Maenbn\LdapLookup\Connection');
-
     }
 
     protected function registerLdapLookup(Application $app)
     {
-        $app->singleton('ldaplookup', function ($app)
-        {
+        $app->singleton('ldaplookup', function ($app) {
 
             $connection = $app['ConnectionInterface'];
 

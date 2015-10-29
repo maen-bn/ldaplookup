@@ -1,9 +1,8 @@
-<?php namespace Maenbn\LdapLookup;
+<?php
 
+namespace Maenbn\LdapLookup;
 
-interface LookupInterface {
-
-
+interface LookupInterface
+{
     public function connect();
-
 }
