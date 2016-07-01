@@ -23,6 +23,8 @@ class Connection implements ConnectionInterface
             ldap_set_option($this->connection, LDAP_OPT_PROTOCOL_VERSION, $this->config['version']);
         }
 
+        $this->setOptions($this->config['options']);
+
         $bind = ldap_bind($this->connection, $this->config['bindRdn'], $this->config['bindPassword']);
 
 
@@ -32,5 +34,12 @@ class Connection implements ConnectionInterface
     public function close()
     {
         ldap_close($this->connection);
+    }
+
+    protected function setOptions($options)
+    {
+        foreach ($options as $option => $value){
+            ldap_set_option($this->connection, $option, $value);
+        }
     }
 }

@@ -36,7 +36,7 @@ A configuration for your LDAP server is required for the LdapLookup to work. Fir
 ```bash
 $ php artisan vendor:publish
 ```
-which will create a `config/ldaplookup.php` file in your app where you can modify it to reflect your LDAP server `hostname`, `port`, `baseDn`, `bindRdn`, and `bindPassword`.
+which will create a `config/ldaplookup.php` file in your app where you can modify it to reflect your LDAP server `hostname`, `port`, `baseDn`, `bindRdn`, and `bindPassword`. You can also specify options in an array for your LDAP connection via the `options` key in the config file.
 
 Add the following lines in your `.env` file:
 

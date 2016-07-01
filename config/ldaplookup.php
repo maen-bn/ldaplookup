@@ -12,6 +12,8 @@ return [
 
     'bindPassword' => env('LDAP_BIND_PASSWORD'),
 
-    'version' => env('LDAP_VERSION')
+    'version' => env('LDAP_VERSION'),
+
+    'options' => []
 
 ];

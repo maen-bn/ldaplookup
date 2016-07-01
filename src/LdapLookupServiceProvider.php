@@ -44,15 +44,6 @@ class LdapLookupServiceProvider extends ServiceProvider
 
     protected function registerConnection(Application $app)
     {
-
-       /* $app->singleton('ldaplookup.connection', function ($app)
-        {
-
-            $config = $app['config']['ldaplookup'];
-
-            return new Connection($config);
-        });*/
-
         $app->bind('ConnectionInterface', function ($app) {
 
             $config = $app['config']['ldaplookup'];
