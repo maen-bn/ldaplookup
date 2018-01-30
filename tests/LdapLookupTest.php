@@ -60,7 +60,6 @@ class LdapLookupTest extends \Orchestra\Testbench\TestCase
     public function testGetByUid()
     {
         $entry = \LdapLookup::getByUid($this->config['test_user']);
-        dump($entry);
         $this->assertArrayHasKey('cn', $entry);
     }
 }
