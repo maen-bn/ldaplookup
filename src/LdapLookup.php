@@ -43,8 +43,16 @@ class LdapLookup implements LookupInterface
             $entry = [];
 
             foreach ($info[$i] as $key => $value) {
-                if (is_string($key)) {
+                if(isset($value['count'])){
+                    unset($value['count']);
+                }
+
+                if(is_string($key)){
                     $entry[$key] = $value[0];
+
+                    if (count($value) > 1) {
+                        $entry[$key] = $value;
+                    }
                 }
             }
             $entries[] = $entry;
