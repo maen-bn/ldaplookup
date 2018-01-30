@@ -50,7 +50,7 @@ class LdapLookup implements LookupInterface
                 if(is_string($key)){
                     $entry[$key] = $value[0];
 
-                    if (count($value) > 1) {
+                    if (is_array($value) && count($value) > 1) {
                         $entry[$key] = $value;
                     }
                 }
