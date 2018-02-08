@@ -17,8 +17,6 @@ class LdapLookup implements LookupInterface
         $this->connection = $connection;
 
         $this->config = $connection->config;
-
-        $this->connect();
     }
 
     public function connect()
@@ -81,6 +79,7 @@ class LdapLookup implements LookupInterface
 
     public function runSearch($filter, $type = null)
     {
+        $this->connect();
         $resultsId = $this->search($filter);
         $entries = $this->getEntries($resultsId, $type);
 
